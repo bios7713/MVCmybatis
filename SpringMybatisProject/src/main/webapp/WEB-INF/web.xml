@@ -17,6 +17,8 @@
   				classpath:spring-context.xml
   				classpath:spring-jdbc.xml
   				classpath:spring-controller.xml
+  				classpath:board-controller.xml
+  				classpath:board-beans.xml
   			</param-value>
   		</init-param>
   		<load-on-startup>1</load-on-startup>

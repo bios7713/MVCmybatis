@@ -3,9 +3,39 @@
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
  <mapper namespace="boardMapper">
  	 <cache/>
- 	
- 	
+ 	 <sql id= "BASECOLUMNS">
+ 	 	board_num, user_id, board_name, board_subject
+	    board_content, board_pass, board_date, ip_addr , read_count 
+ 	 </sql>
+ 	 
+	<insert id="boardInsert" parameterType="bDto">
+			insert into board (<include refid="BASECOLUMNS" />) 
+			values(num_seq.nextval,#{userId},#{boardName},
+			#{boardSubject},#{boardContent},#{boardPass},
+			sysdate,#{ipAddr},0)	
+	</insert>	
 	
-
-
+	<resultMap type="bDto" id="baseBoardMap"  >
+	    <id column="board_num" jdbcType="BIGINT" property="boardNum"  />
+	    <result column="user_id" jdbcType="VARCHAR" property="userId"/>
+	    <result column="board_name" jdbcType="VARCHAR" property="boardName" />
+	    <result column="board_subject" jdbcType="VARCHAR" property="boardSubject" />
+	     <result column="board_content" jdbcType="VARCHAR" property="boardContent" />
+	    <result column="board_pass" jdbcType="VARCHAR" property="boardPass" />
+	     <result column="board_date" jdbcType="TIMESTAMP" property="boardDate" />
+	    <result column="ip_addr" jdbcType="VARCHAR" property="ipAddr" />
+	    <result column="read_count" jdbcType="VARCHAR" property="readCount" />
+	 </resultMap>
+	 
+	  
+	<select id="boardList"  parameterType="java.util.List" resultType="bDto" resultMap="baseBoardMap" >
+			select <include refid="BASECOLUMNS"/>
+			from board
+		<where>
+				<if test ="value != null">
+					board_num = ${boardNum}
+				</if>
+		</where>
+	</select> 
+	
 </mapper>

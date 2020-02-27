@@ -15,10 +15,10 @@ import Service.Board.BoardModifyService;
 public class BoardModifyController {
 	@Autowired
 	private BoardDetailService boardDetailService;
-	@Autowired
-	private BoardModifyService boardModifyServise;
+	//@Autowired
+	//private BoardModifyService boardModifyServise;
 	
-	@RequestMapping(value="/board/boardModify")
+	//@RequestMapping(value="/board/boardModify")
 	public String boardModify(@RequestParam(value="num") Integer boardNum , Model model,
 			BoardCommand boardCommand) {
 		System.out.println("boardModifyConroller:" + boardCommand.getBoardNum());
@@ -30,7 +30,7 @@ public class BoardModifyController {
 	@RequestMapping(value="/board/boardModifyPro")
 	public String boardModifyPro(BoardCommand boardCommand , Model model) {
 		System.out.println("boardModifyProController"+boardCommand);
-	 boardModifyServise.boardModify(boardCommand, model);
+	// boardModifyServise.boardModify(boardCommand, model);
 	 	System.out.println();
 	return"redirect:/board/boardDetail/"+boardCommand.getBoardNum();	
 	}

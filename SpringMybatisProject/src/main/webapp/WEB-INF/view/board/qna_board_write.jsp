@@ -22,6 +22,7 @@
 		<td>
 			<form:input path="boardName" size="10" maxlength="10" 
 				value=""/>
+			<form:errors path="boardName" />
 		</td>
 	</tr>
 	<tr>
@@ -31,6 +32,7 @@
 		<td>
 			<form:password path="boardPass" size="10" maxlength="10" 
 				value=""/>
+					<form:errors path="boardPass" />
 		</td>
 	</tr>
 	<tr>
@@ -40,6 +42,7 @@
 		<td>
 			<form:input path="boardSubject"  size="50" maxlength="100" 
 				value=""/>
+					<form:errors path="boardSubject" />
 		</td>
 	</tr>
 	<tr>
