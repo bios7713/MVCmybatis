@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"  
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:context="http://www.springframework.org/schema/context" 
+             xmlns:mvc="http://www.springframework.org/schema/mvc" 
+             xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                                            http://www.springframework.org/schema/beans/spring-beans.xsd                                            
+                                            http://www.springframework.org/schema/context
+                                            http://www.springframework.org/schema/context/spring-context.xsd                                           
+                                            http://www.springframework.org/schema/mvc
+                                            http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+           
+           
+      <!-- context는 객체 주입을 위해 필요하다. -->                                 
+      <context:annotation-config/>
+            <!-- @controller -->
+      <mvc:annotation-driven/>
+              <!-- root를 알려주는 역할 -->
+      <mvc:default-servlet-handler/>
+      <mvc:view-resolvers>
+         <mvc:jsp prefix="/WEB-INF/view/" />              		
+      </mvc:view-resolvers>       
+      <mvc:resources location="/WEB-INF/view/" mapping="/**" cache-period="14400" />
+                        
+
+       <mvc:interceptors >       
+           		<mvc:interceptor>
+           			<mvc:mapping path="/edit/**"/>
+					<bean class="Interceptor.AuthCheckInterceptor"/>		           				
+          		</mvc:interceptor>         
+        </mvc:interceptors> 
+           
+        <bean id="messageSource" 
+                        class="org.springframework.context.support.ResourceBundleMessageSource" >
+               <property name="basenames">
+               	 	<list> 
+               	 		<value> message.label </value>
+               	 		<value> message.error </value>
+               	 	</list>
+                 </property>
+                 <property name="defaultEncoding" value="UTF-8" />
+         </bean>
+        <mvc:view-controller path="/main" view-name="main" />  
+           
+  
+           
+     <bean id = "multipartResolver"
+               class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+             <property name="maxUploadSize" value="100000000"/>
+           	 <property name="maxInMemorySize" value="100000000"/>           
+     </bean>
+           
+ 
+ 
+ </beans>
+
