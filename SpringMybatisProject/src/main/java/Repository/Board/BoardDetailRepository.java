@@ -12,7 +12,7 @@ import Model.DTO.BoardDTO;
 public class BoardDetailRepository {
 	@Autowired
 	SqlSession sqlSession;
-	private final String namespace= "boardMapper";
+	private final String namespace= "mapper.boardMapper";
 	
 	public BoardDTO selectBoardNum(Integer boardNum) {
 		String statement = namespace + ".boardInsert";

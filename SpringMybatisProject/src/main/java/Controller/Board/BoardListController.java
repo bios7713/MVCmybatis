@@ -14,13 +14,12 @@ public class BoardListController {
 	@Autowired
 	BoardListService boardListService;	
 	          //DB�쓽 媛믪쓣 ListPage濡� 蹂대궡�젮硫� Model�씠 �븘�슂�븯�떎 !!
-	@RequestMapping(value="board/boardList" , method = RequestMethod.GET)
+	@RequestMapping(value="board/boardList")
 	public String boardform(Model model) {
 		
 		
 		
 		boardListService.boardList(model);
-	
 		return "/board/qna_board_list";
 	}
 	

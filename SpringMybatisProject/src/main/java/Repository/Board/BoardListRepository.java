@@ -13,9 +13,9 @@ public class BoardListRepository {
 	@Autowired
 	private SqlSession sqlSession;
 
-	private final String namespace= "boardMapper";
+	private final String namespace= "mappers.boardList";
 	public List<BoardDTO> boardListSelect() {
-		String statement = namespace+".boardList";
+		String statement = namespace+".listBoard";
 		
 			List<BoardDTO> lists =	sqlSession.selectList(statement,null);
 

@@ -14,6 +14,8 @@
 		<property name="user" value="STUDY" />
 		<property name="password" value="STUDY" />
       </bean>
+      
+      
       <!-- SqlSessionFactory  객체주입!  -->
        <bean id = "sqlSessionFactory" 
 			class ="org.mybatis.spring.SqlSessionFactoryBean">

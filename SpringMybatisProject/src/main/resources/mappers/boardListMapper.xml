@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.opg//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="mappers.boardList">
+<cache/>
+	<resultMap type="bDto" id="baseBoardMap"  >
+
+	    <id column="BOARD_NUM" jdbcType="BIGINT" property="boardNum"  />
+	    <result column="USER_ID" jdbcType="VARCHAR" property="userId"/>
+	    <result column="BOARD_NAME" jdbcType="VARCHAR" property="boardName" />
+	    <result column="BOARD_SUBJECT" jdbcType="VARCHAR" property="boardSubject" />
+	     <result column="BOARD_CONTENT" jdbcType="VARCHAR" property="boardContent" />
+	    <result column="BOARD_PASS" jdbcType="VARCHAR" property="boardPass" />
+	     <result column="BOARD_DATE" jdbcType="TIMESTAMP" property="boardDate" />
+	    <result column="IP_ADDR" jdbcType="VARCHAR" property="boardAddr" />
+	    <result column="READ_COUNT" jdbcType="VARCHAR" property="readCount" />
+
+	 </resultMap>
+	 
+	  
+	<select id="listBoard"  resultType="bDto"  parameterType="java.util.List">
+			select board_num, user_id, board_name, board_subject
+	                 board_content, board_pass, board_date, ip_addr , read_count 
+			from board board_num = ${boardNum}
+</select> 
+
+</mapper>
+	

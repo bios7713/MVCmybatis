@@ -33,7 +33,7 @@ public class BoardWriteService {
 		boardDTO.setBoardPass(Encrypt.getEncryption(boardCommand.getBoardPass()));
 		boardDTO.setBoardSubject(boardCommand.getBoardSubject());
 		boardDTO.setBoardContent(boardCommand.getBoardContent());
-		boardDTO.setIpAddr(request.getRemoteAddr());
+		boardDTO.setBoardAddr(request.getRemoteAddr());
 			
 		boardWriteRepository.insertBoard(boardDTO);
 		

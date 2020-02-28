@@ -49,8 +49,11 @@
              <property name="maxUploadSize" value="100000000"/>
            	 <property name="maxInMemorySize" value="100000000"/>           
      </bean>
-           
- 
+     
+    <bean id="bcryptPasswordEncoder "
+       class = "org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder">
+       <constructor-arg value="15" />
+    </bean>              <!--  1~64까지 가능  가중치 값? 크면클수록 시간이 오래걸림-->
  
  </beans>
 

@@ -4,7 +4,10 @@
 	
 	<configuration>
 		<typeAliases  >
+			
 			<typeAlias type="Model.DTO.BoardDTO" alias="bDto"/>
-			<!--  <typeAlias type="Medel.DTO.MemberDTO" alias="mDto"/> -->
+		
+		     <typeAlias type="Model.DTO.MemberDTO" alias="mDto"/> 
+      		 <typeAlias type="Model.DTO.StartEndPageDTO" alias="pDto"/> 
 		</typeAliases>
 	</configuration>

@@ -19,6 +19,8 @@
   				classpath:spring-controller.xml
   				classpath:board-controller.xml
   				classpath:board-beans.xml
+  				classpath:member-beans.xml
+  				classpath:member-controller.xml
   			</param-value>
   		</init-param>
   		<load-on-startup>1</load-on-startup>

@@ -8,7 +8,6 @@
                   
             
                    <bean id ="boardListService" class="Service.Board.BoardListService" />
-                          
                     <bean id ="boardListRepository" class="Repository.Board.BoardListRepository"/>
                                        
                     <bean id ="boardWriteService" class="Service.Board.BoardWriteService" />

@@ -9,6 +9,13 @@
 <script type="text/javascript" 
  src="http://code.jquery.com/jquery-latest.js" ></script>
 
+ <script type="text/javascript">
+		$(function(){ 
+				if("${err}"=="1"){
+	 		alert("제대로 확인해라");
+				}
+	 	});	 	 
+ </script>
 </head>
 <body>
 
@@ -100,5 +107,7 @@
 	</tr>
  </table>
 </form:form>
+
+
 </body>
 </html>

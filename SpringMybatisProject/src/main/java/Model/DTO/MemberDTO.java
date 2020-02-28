@@ -1,8 +1,10 @@
 package Model.DTO;
 
+import java.io.Serializable;
 import java.sql.Timestamp;
+@SuppressWarnings("serial")
+public class MemberDTO  implements Serializable {
 
-public class MemberDTO {
 	String userId;
 	String userPw;
 	String userName;
@@ -13,6 +15,22 @@ public class MemberDTO {
 	String userPh1;
 	String userPh2;
 	Timestamp userRegist;
+	public MemberDTO() {}
+	
+	public MemberDTO(String userId, String userPw, String userName, Timestamp userBirth, String userGender,
+			String userEmail, String userAddr, String userPh1, String userPh2, Timestamp userRegist) {
+		this.userId = userId;
+		this.userPw = userPw;
+		this.userName = userName;
+		this.userBirth = userBirth;
+		this.userGender = userGender;
+		this.userEmail = userEmail;
+		this.userAddr = userAddr;
+		this.userPh1 = userPh1;
+		this.userPh2 = userPh2;
+		this.userRegist = userRegist;
+	}
+
 	
 	
 	public String getUserId() {

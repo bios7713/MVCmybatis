@@ -13,7 +13,7 @@ import Repository.Board.BoardListRepository;
 public class BoardListService {
 	@Autowired
 	BoardListRepository boardListRepository;
-	
+	               
 	public void boardList(Model model) {	
 	
 	

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.opg//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+	
+	<mapper namespace="mappers.memberMapper" >
+	  <cache/>
+	  <sql id= "baseCol" >
+ 				user_id, user_pw, user_name, user_birth,
+			    user_gender, user_email, user_addr, user_ph1, 
+			    user_ph2, user_regist
+ 	 </sql>
+	 <insert id="insertMember" parameterType="Model.DTO.MemberDTO">
+		       INSERT INTO MEMBER (<include refid="baseCol" />)  
+			   VALUES( #{userId}, #{userPw}, #{userName}, #{userBirth}, 
+			 			  	 #{userGender}, #{userEmail}, #{userAddr},
+			    			 #{userPh1}, #{userPh2}, sysdate ) 	
+	</insert>
+	
+	
+	 <resultMap type="mDto" id="baseMember">
+     	<constructor>
+     		 <idArg column="user_id" javaType="string"  />
+     		 <arg column="user_pw" javaType="string"/>
+     		 <arg column="user_name" javaType="string" />
+     		 <arg column="user_birth" javaType="java.sql.Timestamp" />
+     		 <arg column="user_gender" javaType="string" />
+     		 <arg column="user_email" javaType="string" />
+     		 <arg column="user_addr" javaType="string" />
+     		 <arg column="user_ph1" javaType="string" />
+     		 <arg column="user_ph2" javaType="string" />
+     		 <arg column="user_regist" javaType="java.sql.Timestamp" />		 
+     	</constructor>     
+     </resultMap>
+	
+	
+	
+   <select id="memberList" parameterType="pDto" resultMap="baseMember">
+      select rn,<include refid="baseCol" /> 
+        from  (select rownum rn, <include refid="baseCol" /> 
+      		      from (select <include refid="baseCol" /> 
+      			           from member
+      			            order by user_regist desc))
+      	where rn &gt;= #{startPage} and rn &lt;= #{endPage}
+  
+   </select>
+	
+	<select id="memberCount" resultType="int">
+			select count(*) from member
+	
+	</select>
+
+
+
+
+
+
+	 
+	
+	</mapper>

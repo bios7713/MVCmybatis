@@ -37,7 +37,27 @@
 	</td>
 </tr>
 </c:forEach>
-
+<tr align=center height=20>
+         <td colspan =3>
+         <c:if test="${page <= 1 }">
+            [이전]&nbsp; <!-- 첫 페이지  -->
+         </c:if>
+         <c:if test="${page > 1 }">
+            <a href = "memberList?page=${page -1 }">[이전]</a>&nbsp;
+         </c:if>
+         
+         <c:forEach var = "i" begin="${startPage }" end ="${ endPage}" >
+            <a href = "memberList?page=${i }">[ ${i } ]</a>&nbsp;
+         </c:forEach>
+         
+         <c:if test="${page >= maxPage }">   
+            [다음]&nbsp; <!-- 마지막 페이지  -->
+         </c:if>
+         <c:if test="${page < maxPage }">   
+            <a href = "memberList?page=${page +1 }">[다음]</a>&nbsp;
+         </c:if>
+         </td>
+      </tr>
 </table>
 <a href="<c:url value= '/register/agree' />" >회원등록</a>
 </body>

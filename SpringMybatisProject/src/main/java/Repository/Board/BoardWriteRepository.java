@@ -15,7 +15,7 @@ public class BoardWriteRepository {
 	@Autowired
 	private SqlSession sqlSession;
 	
-	private final String namespace= "boardMapper";
+	private final String namespace= ".boardMapper";
 	public Integer insertBoard(BoardDTO dto) {
 		String statement = namespace + ".boardInsert";
 		

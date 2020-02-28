@@ -11,7 +11,7 @@
 </head>
 <body>
 
-
+<c:if test="${empty authInfo }">
 <form:form action="login" name="frm" id="frm" method="post" commandName="loginCommand">  
 
 	<table border =1>	
@@ -43,8 +43,10 @@
 	</table>
 
 </form:form>
+</c:if>
 
 
+<c:if test="${!empty authInfo }">
  <!-- 로그인 되었을때 -->
  <a href="memberDetail">내 정보</a>
  <a href="logout">로그아웃</a>
@@ -56,6 +58,6 @@
  <a href="goodsList">상품목록</a> <!--  JSON , AJAX -->
  <a href="mailForm">메일전송</a>
  <a href="survey">설문지</a>
-
+</c:if>
  </body>
 </html>
