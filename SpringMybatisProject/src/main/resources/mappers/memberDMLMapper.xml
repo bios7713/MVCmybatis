@@ -4,7 +4,13 @@
 	
 <mapper namespace="mappers.memberDMLMapper">
  <cache />
+   <update id="userPwChange" parameterType="pwcDto" >
+   			update member 
+   			set user_pw =  #{newUserPw}
+   			 where user_Id = #{userId} and user_pw = #{userPw}
+   
 
+   </update>
 	<update id="updateMember" parameterType="mDto">
 			update member 
 		<trim prefix="set" prefixOverrides="," >		
@@ -26,7 +32,12 @@
 	
 	<delete id="deleteMember" parameterType="mDto" >
  			delete from member 
-			<where>user_id = #{useId} and user_pw = #{usePw}</where> 	
+			<where>
+				user_Id = #{userId} 
+				<if test="userPw != null">
+				and user_pw = #{usePw}
+		   		 </if>					
+			</where> 	
 	</delete>
 
 </mapper>

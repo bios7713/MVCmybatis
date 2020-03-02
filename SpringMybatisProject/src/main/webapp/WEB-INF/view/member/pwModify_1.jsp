@@ -23,7 +23,7 @@ $(function(){
 <body>
 <form:form action="pwModifyPro"  method="post" name="frm" id="frm" commandName="changePwdCommand"> 
 	<form:hidden path="userId" />
-	현재비밀번호 : <form:password  path = "pw"  id ="pw" /> 
+	현재비밀번호 : <form:password  path ="pw"  id ="pw" /> 
 	                  <form:errors  path="pw" /><br />
 	새 비밀번호 : <form:password  path = "newPw" id ="newPw" />
 	   				 <form:errors  path="newPw" /> <br />

@@ -11,12 +11,15 @@ import Command.Member.MemberCommand;
 import Controller.Encrypt;
 
 import Model.DTO.MemberDTO;
+import Repository.Member.LoginRepository;
 import Repository.Member.MemberDMLRepository;
 
 @Service
 public class MemberModifyService {
 	@Autowired
     private MemberDMLRepository memberDMLRepository;
+	@Autowired
+	private LoginRepository loginRepository;
 	@Autowired
 	BCryptPasswordEncoder bCryptPasswordEncoder;
 	public Integer memberModify(MemberCommand memberCommand , Model model) {
@@ -31,9 +34,14 @@ public class MemberModifyService {
 		DTO.setUserPh1(memberCommand.getUserPh1());
 		DTO.setUserPh2(memberCommand.getUserPh2());
 		DTO.setUserName(memberCommand.getUserName());
-		DTO.setUserPw(
-			   bCryptPasswordEncoder.encode(memberCommand.getUserPw()));
-
-		return memberDMLRepository.memberUpdate(DTO);
+		MemberDTO DBdto = new MemberDTO();
+		DBdto = loginRepository.selectByUserId(DTO);
+       if( bCryptPasswordEncoder.matches(
+					   memberCommand.getUserPw(),DBdto.getUserPw())) {
+				 DTO.setUserPw(DTO.getUserPw());
+				 
+			 return memberDMLRepository.memberUpdate(DTO);
+         } 
+       	return 0;
 	}
 }

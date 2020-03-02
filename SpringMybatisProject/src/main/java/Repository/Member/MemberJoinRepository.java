@@ -20,6 +20,8 @@ public class MemberJoinRepository extends AbstractRepository {
 	 	}catch(Exception e) {
 	 		e.printStackTrace();	 		
 	 		sqlSession.rollback();
+	 	}finally {
+	 		sqlSession.close();
 	 	}
 	 		return i;
 	 }	 

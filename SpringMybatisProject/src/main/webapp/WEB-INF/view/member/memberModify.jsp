@@ -33,7 +33,7 @@
 	<form:hidden path="userId"/>
 	<input type="hidden" name = "userBirth" value="
 	<fmt:formatDate value='${memberCommand.userBirth}' type='date' pattern='yyyyMMdd'/>" />
-<table border = 1  width = 600 align = "center" cellpadding = 3 >
+ <table border = 1  width = 600 align = "center" cellpadding = 3 >
 	<tr><td colspan=2> 회원정보 수정 </td></tr>
 	<tr><td >아이디와 비번</td>
 		<td >&nbsp;</td></tr>
@@ -52,12 +52,7 @@
 	<tr><td> 생년월일 및 성별</td>
 		<td> <fmt:formatDate value="${memberCommand.userBirth}" type="date" pattern="yyyyMMdd"/>
 		&#38;
-		<c:if test="${memberCommand.userGender == 'M' }">
-			남자
-		</c:if>
-		<c:if test="${memberCommand.userGender == 'F' }">
-			여자
-		</c:if>	
+		${memberCommand.userGender}
 		</td>
 		
 	</tr>

@@ -34,11 +34,11 @@ public class MemberModifyController {
 			return "member/memberModify";
 		}
 		Integer i =	memberModifyService.memberModify(memberCommand, model);
-		if(i < 0) {
-		   errors.rejectValue("userPw", "badPw");	   
-		   return "redirect:/edit/memberMlodify?id=" + memberCommand.getUserId();
+		if(i <= 0) {
+		   errors.rejectValue("userPw", "badPw");	  
+		   return "member/memberModify";
 		}else {
-		return "redirect:/edit/memberInfo/" + memberCommand.getUserId();
+		return "redirect:/edit/memberInfo/"+ memberCommand.getUserId();
 		}
 	}
 }

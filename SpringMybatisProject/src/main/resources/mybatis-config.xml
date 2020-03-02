@@ -9,5 +9,6 @@
 		
 		     <typeAlias type="Model.DTO.MemberDTO" alias="mDto"/> 
       		 <typeAlias type="Model.DTO.StartEndPageDTO" alias="pDto"/> 
+      		 <typeAlias type="Model.DTO.UserPasswordChangeDTO" alias="pwcDto"/>
 		</typeAliases>
 	</configuration>
