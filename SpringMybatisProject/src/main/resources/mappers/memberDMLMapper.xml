@@ -8,8 +8,6 @@
    			update member 
    			set user_pw =  #{newUserPw}
    			 where user_Id = #{userId} and user_pw = #{userPw}
-   
-
    </update>
 	<update id="updateMember" parameterType="mDto">
 			update member 
