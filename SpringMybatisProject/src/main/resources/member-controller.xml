@@ -10,10 +10,10 @@
                     <bean class="Controller.Member.LoginController" />                  
                     <bean class="Controller.Member.LogoutController" />    
                     <bean class="Controller.Member.MemberListController" />                
-                    <bean class="Controller.Member.MemberInfoController" />
-                    
-                    <!-- 
+                    <bean class="Controller.Member.MemberInfoController" />                        
                     <bean class="Controller.Member.MemberModifyController" />
+                    
+                    <!--  
                     <bean class="Controller.Member.MemberPasswordController"/>
                     <bean class="Controller.Member.PwModifyProController" />
                      -->

@@ -18,11 +18,9 @@ public class MemberInfoController {
 		@RequestMapping("/edit/memberInfo/{abc}")
 		public String memberInfo (@PathVariable("abc") String userId , Model model) {
 			try {
-				 memberDetailService.memberDetail(userId ,model);			
-				
+				 memberDetailService.memberDetail(userId ,model);							
 				return "member/memberInfo";
 			}catch(Exception e) {				
-	
 				e.printStackTrace();
 				return "redirect:/member/memberList";					
 			}

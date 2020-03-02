@@ -18,10 +18,10 @@
 	 </resultMap>
 	 
 	  
-	<select id="listBoard"  resultType="bDto"  parameterType="java.util.List">
-			select board_num, user_id, board_name, board_subject
+	<select id="listBoard"  resultMap="baseBoardMap" parameterType="bDto">
+			select board_num, user_id, board_name, board_subject,
 	                 board_content, board_pass, board_date, ip_addr , read_count 
-			from board board_num = ${boardNum}
+			from board where board_num = #{boardNum}
 </select> 
 
 </mapper>

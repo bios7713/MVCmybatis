@@ -37,8 +37,8 @@ public class AuthService {
 			 errors.rejectValue("id1", "notId");
 			 
 		 }else { 			 
-			 if( bcryptPasswordEncoder.matches(
-		               loginCommand.getPw() , dto.getUserPw())) {
+			 if(bcryptPasswordEncoder.matches(
+					 	loginCommand.getPw() , dto.getUserPw())) {
 					AuthInfo authInfo = new AuthInfo(							
 							 dto.getUserId(),
 								 dto.getUserEmail(),

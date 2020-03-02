@@ -48,12 +48,16 @@
 			select count(*) from member
 	
 	</select>
-
-
-
-
-
-
-	 
 	
+	<update id="modifyMember" parameterType="mDto">
+			update member set user_email= #{userEmail},
+			 user_ph1 = #{userPh1}, user_ph2= #{userPh2}, user_addr = #{userAddr}
+			where user_id =#{userId} and user_pw =#{userPw}
+	
+	
+	</update>
+
 	</mapper>
+	
+	
+	

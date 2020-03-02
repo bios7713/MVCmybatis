@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.opg//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+	
+<mapper namespace="mappers.memberDMLMapper">
+ <cache />
+
+	<update id="updateMember" parameterType="mDto">
+			update member 
+		<trim prefix="set" prefixOverrides="," >		
+			  	<if test="userId != null"> user_Id = #{userId}, </if>			  	
+			  	<if test="userPw != null"> user_pw = #{userPw}, </if>
+			  	<if test="userName != null"> 	user_name = #{userName}, </if>
+			  	<if test = "userBirth != null" >user_birth = #{userBirth},</if>
+			  	<if test = "userGender != null" >user_gender = #{userGender},</if>
+			  	<if test = "userEmail != null" >user_email = #{userEmail},</if>
+			  	<if test = "userAddr != null" >user_addr = #{userAddr},</if>
+			  	<if test = "userPh1 != null" >user_ph1 = #{userPh1},</if>
+			  	<if test = "userPh2 != null" >user_ph2 = #{userPh2},</if>				 
+		</trim>
+		<where >	
+		   <if test="userId != null"> user_Id = #{userId},  </if>
+		   <if test="userPw != null"> user_Pw = #{userPw}</if>
+	    </where>
+	</update>
+	
+	<delete id="deleteMember" parameterType="mDto" >
+ 			delete from member 
+			<where>user_id = #{useId} and user_pw = #{usePw}</where> 	
+	</delete>
+
+</mapper>

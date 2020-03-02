@@ -12,8 +12,7 @@ public class MemberDetailRepository extends AbstractRepository{
 	public MemberDTO selectByUserId(MemberDTO D) {
 		
 		String statement = namespace+".selectUser";
-		
-		
+			
 		return sqlSession.selectOne(statement,D);
 		
 	}

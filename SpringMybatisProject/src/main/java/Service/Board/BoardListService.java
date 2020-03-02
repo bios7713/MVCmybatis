@@ -19,9 +19,9 @@ public class BoardListService {
 	
 	    List<BoardDTO> boardDTO = boardListRepository.boardListSelect();
 
-           System.out.println(boardDTO);
+         System.out.println(boardDTO);
 			
-			model.addAttribute("boards",boardDTO );
+	    model.addAttribute("boards",boardDTO );
 
 
 

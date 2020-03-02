@@ -9,7 +9,7 @@ import Model.DTO.MemberDTO;
 
 @Repository
 public class MemberJoinRepository extends AbstractRepository {
-	SqlSession sqlSession =  getSqlSessionFactory().openSession();
+	private SqlSession sqlSession =  getSqlSessionFactory().openSession();
 	private final String namespace = "mappers.memberMapper";	
 	public Integer insertMember(MemberDTO D) {
 		Integer i = null;

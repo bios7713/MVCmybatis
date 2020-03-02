@@ -19,8 +19,11 @@
   					<bean id ="memberDetailService" class="Service.Member.MemberDetailService" />                  
                     <bean id ="memberDetailRepository" class="Repository.Member.MemberDetailRepository" />
                     
-                    <!-- 
+   
                     <bean id ="memberModifyService" class="Service.Member.MemberModifyService" />
+                   	<bean id ="memberDMLRepository" class="Repository.Member.MemberDMLRepository" />
+                   
+                   <!-- 
                     <bean id ="pwModifyService" class = "Service.Member.PwModifyService" />
                     <bean id ="passwordModifyService" class="Service.Member.PasswordModifyService" />
                     <bean id ="mainService" class="Service.Member.MainService" />

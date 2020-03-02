@@ -16,23 +16,20 @@ public class MemberListRepository extends AbstractRepository{
 		
 		Long startRow = ((long)page -1) *10 +1;
 		Long endRow = startRow + limit -1;
-		
-
-		
+				
 		
 		String statement  = namespace + ".memberList";
 		
 		List<MemberDTO> L =
 				  sqlSession.selectList(statement, new StartEndPageDTO(startRow,endRow));
-		
-		
-		
 		return L;
+		
+		
 	}
 	public Integer ListCount() {
 		String statement  = namespace + ".memberCount";
 		
-			return sqlSession.selectOne(statement);
+		return sqlSession.selectOne(statement);
 	}
 	
 	

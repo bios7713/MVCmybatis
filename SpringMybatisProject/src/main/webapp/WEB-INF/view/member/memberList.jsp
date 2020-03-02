@@ -12,7 +12,7 @@
 <table width=50% border="1" cellpadding="0" cellspacing="0" >
 <tr align="center" valign="middle">
 	<td colspan =4 >회원리스트</td>
-	<td align=left >회원수 : ${count} </td>
+	<td align="right" colspan =2  >회원수 : ${count} </td>
 </tr>
 <tr align="center" valign="middle">
 	<td align="center">회원아이디</td>
@@ -37,8 +37,9 @@
 	</td>
 </tr>
 </c:forEach>
+
 <tr align=center height=20>
-         <td colspan =3>
+         <td colspan =6>
          <c:if test="${page <= 1 }">
             [이전]&nbsp; <!-- 첫 페이지  -->
          </c:if>
@@ -58,7 +59,9 @@
          </c:if>
          </td>
       </tr>
-</table>
 <a href="<c:url value= '/register/agree' />" >회원등록</a>
+
+</table>
+
 </body>
 </html>

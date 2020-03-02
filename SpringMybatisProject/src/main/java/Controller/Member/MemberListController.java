@@ -13,7 +13,7 @@ import Service.Member.MemberListService;
 public class MemberListController {
 	@Autowired
 	private MemberListService memberListService;
-	@RequestMapping(value="member/memberList" , method = RequestMethod.GET)
+	@RequestMapping(value="member/memberList")
 	public String list(Model model , @RequestParam(value= "page" , defaultValue="1")
 	                                                                                                    Integer page ){
 		

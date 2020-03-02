@@ -31,6 +31,8 @@
 <form:form path="frm" id="frm" method ="post" commandName="memberCommand"  
      action="memberModifyPro">
 	<form:hidden path="userId"/>
+	<input type="hidden" name = "userBirth" value="
+	<fmt:formatDate value='${memberCommand.userBirth}' type='date' pattern='yyyyMMdd'/>" />
 <table border = 1  width = 600 align = "center" cellpadding = 3 >
 	<tr><td colspan=2> 회원정보 수정 </td></tr>
 	<tr><td >아이디와 비번</td>
@@ -45,10 +47,10 @@
 	<tr><td >기본정보 입력</td>
 		<td >&nbsp;</td></tr>
 	<tr><td>사용자 이름</td>
-		<td>${memberCommand.userName }</td>
+		<td></td>
 	</tr>
 	<tr><td> 생년월일 및 성별</td>
-		<td> <fmt:formatDate value="${memberCommand.userBirth}" type="date" pattern="yy-MM-dd"/>
+		<td> <fmt:formatDate value="${memberCommand.userBirth}" type="date" pattern="yyyyMMdd"/>
 		&#38;
 		<c:if test="${memberCommand.userGender == 'M' }">
 			남자
