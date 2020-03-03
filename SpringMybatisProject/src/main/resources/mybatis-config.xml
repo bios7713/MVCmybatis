@@ -3,12 +3,15 @@
 	"http://mybatis.org/dtd/mybatis-3-config.dtd" >
 	
 	<configuration>
-		<typeAliases  >
-			
-			<typeAlias type="Model.DTO.BoardDTO" alias="bDto"/>
-		
+		<typeAliases  >		
+			<typeAlias type="Model.DTO.BoardDTO" alias="bDto"/>	
 		     <typeAlias type="Model.DTO.MemberDTO" alias="mDto"/> 
       		 <typeAlias type="Model.DTO.StartEndPageDTO" alias="pDto"/> 
       		 <typeAlias type="Model.DTO.UserPasswordChangeDTO" alias="pwcDto"/>
+      		 
+      		 <typeAlias type="Model.DTO.CommentDTO" alias="CDTO" />
+      		 <typeAlias type="Model.DTO.ReplyDTO" alias="reply"/>
+      		 <typeAlias type="Model.DTO.ReplyUserDTO" alias="replyuser"/>
+      		 <typeAlias type="Model.DTO.CommentReplysDTO" alias="commentReply"/>
 		</typeAliases>
 	</configuration>

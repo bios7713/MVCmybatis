@@ -54,7 +54,7 @@
  <a href="board/boardList">공지사항 게시판</a>
  <a href="library/libraryList">일반 자료실</a>
  <a href="answer/answerList">답변형 게시판</a>
- <a href="commentBoard">댓글 게시판</a> <!-- 고급지식?? -->
+ <a href="comment/comment_List">댓글 게시판</a> <!-- 고급지식?? -->
  <a href="goodsList">상품목록</a> <!--  JSON , AJAX -->
  <a href="mailForm">메일전송</a>
  <a href="survey">설문지</a>

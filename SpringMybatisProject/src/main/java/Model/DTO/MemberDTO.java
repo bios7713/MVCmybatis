@@ -5,6 +5,7 @@ import java.sql.Timestamp;
 @SuppressWarnings("serial")
 public class MemberDTO  implements Serializable {
 
+	
 	String userId;
 	String userPw;
 	String userName;
@@ -15,6 +16,17 @@ public class MemberDTO  implements Serializable {
 	String userPh1;
 	String userPh2;
 	Timestamp userRegist;
+	
+	CommentDTO commentDTO;
+	
+	public CommentDTO getCommentDTO() {
+		return commentDTO;
+	}
+
+	public void setCommentDTO(CommentDTO commentDTO) {
+		this.commentDTO = commentDTO;
+	}
+
 	public MemberDTO() {}
 	
 	public MemberDTO(String userId, String userPw, String userName, Timestamp userBirth, String userGender,

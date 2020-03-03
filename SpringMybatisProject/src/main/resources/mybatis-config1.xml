@@ -9,6 +9,10 @@
 	 	     <typeAlias type="Model.DTO.MemberDTO" alias="mDto"/> 
       		 <typeAlias type="Model.DTO.StartEndPageDTO" alias="pDto"/> 
       		 <typeAlias type="Model.DTO.UserPasswordChangeDTO" alias="pwcDto"/>
+      		   <typeAlias type="Model.DTO.CommentDTO" alias="CDTO" />
+      		 <typeAlias type="Model.DTO.ReplyDTO" alias="reply"/>
+      		 <typeAlias type="Model.DTO.ReplyUserDTO" alias="replyuser"/>
+      		  <typeAlias type="Model.DTO.CommentReplysDTO" alias="commentReply"/>
 	</typeAliases>
     
 	<environments default="development" >
@@ -26,6 +30,8 @@
 		<mapper resource="mappers/memberMapper.xml" />
 		<mapper resource="mappers/loginMapper.xml"/>
 		<mapper resource="mappers/memberDMLMapper.xml" />
+		<mapper resource="mappers/commentMapper.xml"/>
+		<mapper resource="mappers/dynamicMapper.xml"/>
 	</mappers>
 	
 	

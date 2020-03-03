@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.opg//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+
+<mapper namespace="Repository.Mapper.CommentDynamicMapper">
+	<cache />
+
+	<sql id="membaseCol">
+		user_id, user_pw, user_name, user_birth,
+		user_gender, user_email, user_addr, user_ph1,
+		user_ph2, user_regist
+	</sql>
+
+
+	<sql id="combaseCol">
+		comment_no, cuser_id, reg_date, comment_content,
+		comment_subject
+	</sql>
+
+
+	<resultMap type="mDto" id="associationResultMap">
+		<id column="user_id" jdbcType="VARCHAR" property="userId" />
+		<result column="user_pw" jdbcType="VARCHAR" property="userPw" />
+		<result column="user_name" jdbcType="VARCHAR" property="userName" />
+		<result column="user_birth" jdbcType="TIMESTAMP" property="userBirth" />
+		<result column="user_gender" jdbcType="VARCHAR" property="userGender" />
+		<result column="user_email" jdbcType="VARCHAR" property="userEmail" />
+		<result column="user_addr" jdbcType="VARCHAR" property="userAddr" />
+		<result column="user_ph1" jdbcType="VARCHAR" property="userPh1" />
+		<result column="user_ph2" jdbcType="VARCHAR" property="userPh2" />
+		<result column="user_regist" jdbcType="TIMESTAMP" property="userRegist" />
+		<association property="commentDTO" javaType="CDTO"  column="cuser_Id">
+			<id column="comment_no" jdbcType="BIGINT" property="commentNo" />
+			<id column="cuser_id" jdbcType="VARCHAR" property="cuserId" />
+			<result column="reg_date" jdbcType="TIMESTAMP" property="regDate" />
+			<result column="comment_content" jdbcType="VARCHAR" property="commentContent" />
+			<result column="comment_subject" jdbcType="VARCHAR" property="commentSubject" />
+		</association>
+	</resultMap>
+	<resultMap type="reply" id="baseReply">
+		 <id column="cuser_id" jdbcType="VARCHAR" property="cuserId"/>
+		   <id column="comment_no" jdbcType="BIGINT" property="commentNo"/>
+		   <id column="reply_no" jdbcType="BIGINT" property="replyNo"/>
+		   <id column="ruser_id" jdbcType="VARCHAR" property="ruserId"/>		   
+		   <result column="reply_content" jdbcType="VARCHAR" property="replyContent" />		   
+		   <result column="reg_date" jdbcType="VARCHAR" property="regDate"/>	
+	</resultMap>
+	
+
+
+
+	<resultMap type="replyuser" id="ReplyUserMap">
+		<association property="replyDTO" column="ruser_id" javaType="reply"
+		  resultMap="baseReply">
+     	</association>		
+		<association property="memberDTO" column="user_id" javaType="mDto" 
+		 resultMap="baseMember" />
+    	</resultMap>
+
+   <resultMap type="mDto" id="baseMember">
+		<id column="user_id" jdbcType="VARCHAR" property="userId" />
+		<result column="user_pw" jdbcType="VARCHAR" property="userPw" />
+		<result column="user_name" jdbcType="VARCHAR" property="userName" />
+		<result column="user_birth" jdbcType="TIMESTAMP" property="userBirth" />
+		<result column="user_gender" jdbcType="VARCHAR" property="userGender" />
+		<result column="user_email" jdbcType="VARCHAR" property="userEmail" />
+		<result column="user_addr" jdbcType="VARCHAR" property="userAddr" />
+		<result column="user_ph1" jdbcType="VARCHAR" property="userPh1" />
+		<result column="user_ph2" jdbcType="VARCHAR" property="userPh2" />
+		<result column="user_regist" jdbcType="TIMESTAMP" property="userRegist" />
+   </resultMap>
+
+
+	<select id="commentAssociation" resultMap="associationResultMap" parameterType="Long">
+            select <include refid="combaseCol" /> , <include refid="membaseCol" />
+            from member m , comment1 c
+			<where> 
+			       m.user_id = c.cuser_id 
+			  		<if test="value !=null">
+			  		and comment_no = #{commentNo}
+			  		</if>
+			</where>		
+	</select>
+	<resultMap type="CDTO" id="baseComment">
+		<id column="comment_no" jdbcType="BIGINT" property="commentNo"/>
+		<id column="cuser_id" jdbcType="VARCHAR" property="cuserId"/>
+		<result column="reg_date" jdbcType="TIMESTAMP" property="regDate"/>
+	    <result column="comment_subject" jdbcType="VARCHAR" property="commentSubject"/>
+		<result column="comment_content" jdbcType="VARCHAR" property="commentContent"/>
+	</resultMap>
+
+	<select id="commentList" resultMap="baseComment">
+			select  comment_no, cuser_id, reg_date, comment_content,
+		              comment_subject
+		    from comment1 
+	</select>	
+	
+	<resultMap type="commentReply" id="collectionReply">
+	     <association property="commentDTO" javaType="CDTO" resultMap="baseComment"/>  
+	     <collection property="replyList" ofType="reply"  resultMap="baseReply" />
+	</resultMap>
+	<select id="commentCollection" resultMap="collectionReply" parameterType="Long">
+		select c.comment_no, c.cuser_id, c.reg_date cdate, comment_content,comment_subject, 
+		         reply_no, ruser_id,  reply_content, r.reg_date rdate
+		from comment1 c left outer join reply r
+		   on c.comment_no = r.comment_no
+	<trim prefix="where" prefixOverrides="AND | OR"> 
+		<if test="value != null">
+		  and c.comment_no = #{commentNo}
+	     </if>
+    </trim>
+	</select>
+	
+	
+	
+</mapper>

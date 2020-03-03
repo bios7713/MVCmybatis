@@ -30,11 +30,9 @@ public class PwModifyService {
 		      CPC.setUserId(memberCommand.getUserId());
 			 model.addAttribute("changePwdCommand" ,CPC);
 			 return "member/pwModify_1";
-		  }else {
-			  
+		  }else {			  
 			 errors.rejectValue("userPw", "badPw");
-			 return "member/pwModify";
-			  
+			 return "member/pwModify";			  
 		  }
 		
 		

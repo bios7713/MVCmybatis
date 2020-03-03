@@ -10,7 +10,7 @@
                                             http://www.springframework.org/schema/mvc
                                             http://www.springframework.org/schema/mvc/spring-mvc.xsd">
            
-           
+      <mvc:view-controller path="comment/commentBoard" view-name="comment/commentForm"/>     
       <!-- context는 객체 주입을 위해 필요하다. -->                                 
       <context:annotation-config/>
             <!-- @controller -->
