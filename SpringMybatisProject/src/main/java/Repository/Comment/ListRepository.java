@@ -17,22 +17,16 @@ public class ListRepository {
 	private final String namespace = "Repository.Mapper.CommentDynamicMapper";
 	public  MemberDTO user(Long commentNo) {
 		String statement = namespace+ ".commentAssociation";
-
-			return sqlSession.selectOne(statement,commentNo);
-		
-	}	
-	
+			return sqlSession.selectOne(statement,commentNo);	
+	}		
 	//1:n = collection;
 	public CommentReplysDTO replies(Long commentNo) {
-		String statement = namespace+ ".commentCollection";
-		
-		return sqlSession.selectOne(statement,commentNo);
-		
+		String statement = namespace+ ".commentCollection";		
+		return sqlSession.selectOne(statement,commentNo);		
 	}
 	//1:1 = assoi...
 	public List<CommentDTO> list(){
-		String statement = namespace+ ".commentList";
-		
+		String statement = namespace+ ".commentList";		
 		return sqlSession.selectList(statement);
 	}
 

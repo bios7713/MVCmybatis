@@ -13,12 +13,11 @@ import Repository.Comment.ListRepository;
 public class ListService {
 	@Autowired
 	private ListRepository listRepository;
-	public List<CommentDTO> commentList(Model model) {
+	public void commentList(Model model) {
 		List<CommentDTO> list = listRepository.list();
-
-		
+	
 		model.addAttribute("lists" , list);
-		return list;
+	
 		
 	}
 }
