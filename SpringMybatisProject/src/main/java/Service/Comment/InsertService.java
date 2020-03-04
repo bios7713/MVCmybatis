@@ -20,7 +20,6 @@ public class InsertService {
 		
 		CommentDTO  CDTO = new CommentDTO(null,userId,null,
 																		commentContent,commentSubject);
-
 		insertCommentRepository.commentInsert(CDTO);
 	}
 	
@@ -33,9 +32,7 @@ public class InsertService {
 		reDTO.setRuserId(ruserId);
 		
 		insertCommentRepository.replyInsert(reDTO);
-		
-		
-		
+	
 	}
 
 }

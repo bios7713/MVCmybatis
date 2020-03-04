@@ -32,6 +32,7 @@
 		<mapper resource="mappers/memberDMLMapper.xml" />
 		<mapper resource="mappers/commentMapper.xml"/>
 		<mapper resource="mappers/dynamicMapper.xml"/>
+		<mapper resource="mappers/dominoMapper.xml"/>
 	</mappers>
 	
 	

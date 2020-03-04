@@ -58,6 +58,9 @@
  <a href="goodsList">상품목록</a> <!--  JSON , AJAX -->
  <a href="mailForm">메일전송</a>
  <a href="survey">설문지</a>
+ <a href="ajaxTest"> ajaxTest</a>
+ <a href="ajaxTest1" >ajaxTest1</a>
+  <a href="domino" >도미노</a>
 </c:if>
  </body>
 </html>
