@@ -54,8 +54,5 @@ $(function(){
 		</select>
 </div>
 
-
-
-
 </body>
 </html>
