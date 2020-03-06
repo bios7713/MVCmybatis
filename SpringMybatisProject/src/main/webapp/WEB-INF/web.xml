@@ -23,6 +23,8 @@
   				classpath:member-controller.xml
   				classpath:comment-beans.xml
   				classpath:comment-controller.xml
+  				classpath:goods-controller.xml
+  				classpath:goods-beans.xml
   			</param-value>
   		</init-param>
   		<load-on-startup>1</load-on-startup>

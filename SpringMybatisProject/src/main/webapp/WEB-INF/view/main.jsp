@@ -55,12 +55,13 @@
  <a href="library/libraryList">일반 자료실</a>
  <a href="answer/answerList">답변형 게시판</a>
  <a href="comment/comment_List">댓글 게시판</a> <!-- 고급지식?? -->
- <a href="goodsList">상품목록</a> <!--  JSON , AJAX -->
+ <a href="goods/goodsList">상품목록</a> <!--  JSON , AJAX -->
  <a href="mailForm">메일전송</a>
  <a href="survey">설문지</a>
  <a href="ajaxTest"> ajaxTest</a>
  <a href="ajaxTest1" >ajaxTest1</a>
   <a href="domino" >도미노</a>
+  <a href="finalMain">메인이요 ?</a>
 </c:if>
  </body>
 </html>

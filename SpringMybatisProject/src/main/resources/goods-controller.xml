@@ -3,9 +3,10 @@
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                xsi:schemaLocation="http://www.springframework.org/schema/beans 
                                             http://www.springframework.org/schema/beans/spring-beans.xsd" >
-          
-          <bean class="Controller.Comment.CommentController"/>
-      	  <bean class="Controller.Mcontroller"/>
-          
+          <bean class="Controller.Goods.GoodsController"/>
+          <bean class="Controller.Goods.GoodsWriteController" />
+          <bean class="Controller.Goods.GoodsDetailController" />
+          <bean class="Controller.Goods.GoodsCartController" />
+          <bean class="Controller.Goods.GoodsWishController" />
           
           </beans>
