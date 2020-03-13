@@ -24,7 +24,17 @@ public class MemberJoinRepository extends AbstractRepository {
 	 		sqlSession.close();
 	 	}
 	 		return i;
-	 }	 
+	 }	
+	
+	public Integer joinOkUpdate(MemberDTO DTO) {
+		String statement = namespace + ".joinUp";
+		Integer i = sqlSession.update(statement,DTO);
+		
+		sqlSession.commit();
+		sqlSession.close();
+		
+		return i;
+	}
 
 	
 }

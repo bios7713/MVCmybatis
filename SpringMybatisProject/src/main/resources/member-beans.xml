@@ -8,6 +8,7 @@
           
           
                     <bean id ="memberJoinService" class= "Service.Member.MemberJoinService" />
+                    <bean id ="regMailService" class="Service.Member.RegMailService" />
                     <bean id ="memberJoinRepository" class="Repository.Member.MemberJoinRepository" />
                                       
                     <bean id ="authService" class="Service.Member.AuthService" />

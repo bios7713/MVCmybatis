@@ -22,6 +22,8 @@ public class MemberJoinService {
 	MemberJoinRepository memberJoinRepository;
 	@Autowired
 	BCryptPasswordEncoder bCryptPasswordEncoder;
+	@Autowired
+	RegMailService regMailService;
 	
 	
 	public Integer execute(MemberCommand memberCommand) throws ParseException  {
@@ -43,9 +45,22 @@ public class MemberJoinService {
 	            bCryptPasswordEncoder.encode(memberCommand.getUserPw()));
 
 			i = memberJoinRepository.insertMember(memberDTO);
-	
+			
+			
+		if( i != null) {
+			regMailService.sendMail(memberDTO.getUserEmail(), memberDTO.getUserId());		
+		}
 		
 		return i;
+	}
+	
+	public Integer numUpdate(String num, String reciver, String userId) {
+		MemberDTO DTO = new MemberDTO();
+		
+		DTO.setJoinOK(num);
+		DTO.setUserEmail(reciver);
+		DTO.setUserId(userId);
+	return memberJoinRepository.joinOkUpdate(DTO);
 	}
 
 }

@@ -11,7 +11,7 @@
 </head>
 <body>
 
-<c:if test="${empty authInfo }">
+
 <form:form action="login" name="frm" id="frm" method="post" commandName="loginCommand">  
 
 	<table border =1>	
@@ -43,10 +43,10 @@
 	</table>
 
 </form:form>
-</c:if>
 
 
-<c:if test="${!empty authInfo }">
+
+
  <!-- 로그인 되었을때 -->
  <a href="memberDetail">내 정보</a>
  <a href="logout">로그아웃</a>
@@ -57,11 +57,11 @@
  <a href="comment/comment_List">댓글 게시판</a> <!-- 고급지식?? -->
  <a href="goods/goodsList">상품목록</a> <!--  JSON , AJAX -->
  <a href="mailForm">메일전송</a>
- <a href="survey">설문지</a>
+ <a href="servey/serveyForm">설문지</a>
  <a href="ajaxTest"> ajaxTest</a>
  <a href="ajaxTest1" >ajaxTest1</a>
   <a href="domino" >도미노</a>
   <a href="finalMain">메인이요 ?</a>
-</c:if>
+
  </body>
 </html>
