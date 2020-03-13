@@ -14,11 +14,9 @@
 </head>
 <body>
 	<div id="header" class="container">
-			<a href="#"><img src="main/images/headstay1.png" alt="#"/></a>
-			<a href="#"><img src="main/images/headshop11.png" alt="#"/></a>
-			<a href="#"><img src="main/images/headcare11.png" alt="#"/></a>
-			
-	
+			<a href="#"><img src="main/images/honstay_G.png" alt="#"/></a>
+			<a href="#"><img src="main/images/honshop_G.png" alt="#"/></a>
+			<a href="#"><img src="main/images/honcare_G.png" alt="#"/></a>	
 		</div>
 
 <ul class="cb-slideshow">
