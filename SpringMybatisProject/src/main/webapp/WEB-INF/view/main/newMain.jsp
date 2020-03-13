@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="main/css/main.css">
 <link rel="stylesheet" href="main/css/nav.css">
 <link rel="stylesheet" href="main/css/head.css">
-
+<link rel="shortcut icon" type="image/x-icon" href="main/images/WEB.png" />
 <title>Insert title here</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" charset="utf-8"></script>
 </head>
@@ -17,7 +17,7 @@
 			<a href="#"><img src="main/images/honstay_G.png" alt="#"/></a>
 			<a href="#"><img src="main/images/honshop_G.png" alt="#"/></a>
 			<a href="#"><img src="main/images/honcare_G.png" alt="#"/></a>	
-		</div>
+	</div>
 
 <ul class="cb-slideshow">
 	<li>
