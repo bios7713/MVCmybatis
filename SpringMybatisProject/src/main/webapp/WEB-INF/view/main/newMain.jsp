@@ -14,9 +14,9 @@
 </head>
 <body>
 	<div id="header" class="container">
-			<a href="#"><img src="main/images/headstay.png" alt="#"/></a>
-			<a href="#"><img src="main/images/headshop.png" alt="#"/></a>
-			<a href="#"><img src="main/images/headcare.png" alt="#"/></a>
+			<a href="#"><img src="main/images/headstay1.png" alt="#"/></a>
+			<a href="#"><img src="main/images/headshop1.png" alt="#"/></a>
+			<a href="#"><img src="main/images/headcare1.png" alt="#"/></a>
 			
 	
 		</div>
