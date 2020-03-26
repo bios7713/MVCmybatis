@@ -59,21 +59,22 @@ body {
 }
  
 .login-btn {
-  background-color: #b8b8b9;
-  width: 97px;
-  height: 30px;
-  display: inline-block;
-  text-align: center;
-  text-decoration: none;
-  font-size: 12px;
-  font-weight: bold;
-  border-radius: 15px;
-  border: none;
-  color: #333745;
-  text-transform: uppercase;
-  margin-left: 20px;
-  transition: all .2s;
-  cursor: pointer;
+    background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%), radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
+    background-color: #faf0e600;
+    width: 115px;
+    height: 45px;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    font-size: 19px;
+    font-weight: bold;
+    border-radius: 9px;
+    border: none;
+    color: rgba(0, 0, 0, 0.56);
+    text-transform: uppercase;
+    margin-left: 20px;
+    transition: all .2s;
+    cursor: pointer;
 }
 .login-btn:hover {
   transform: scale(1.06);
@@ -176,20 +177,22 @@ body {
 }
  
 .buy-now-btn {
-  background-color: #cdcdcd;
-  width: 220px;
-  height: 50px;
-  border-radius: 30px;
-  border: none;
-  font-family: Montserrat;
-  font-size: 20px;
-  font-weight: 100;
-  color: #fff;
-  text-align: left;
-  padding-left: 35px;
-  position: relative;
-  cursor: pointer;
-  transition: all .2s;
+    background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%), radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
+    background-color: #cdcdcd;
+    width: 220px;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    font-family: Montserrat;
+    font-size: 20px;
+    font-weight: 100;
+    color: #000000b3;
+    text-align: left;
+    padding-left: 35px;
+    position: relative;
+    cursor: pointer;
+    transition: all .2s;
+}
 }
  
 .buy-now-btn:hover {
