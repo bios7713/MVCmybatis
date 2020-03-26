@@ -1,62 +1,71 @@
 @charset "UTF-8";
-* {
-  box-sizing: border-box;
+
+
+.cb-slideshow,
+.cb-slideshow:after { 
+    position: fixed;
+    width: 100%;
+    height:100%;
+    top:  60px;
+    left: 0px;
+    z-index: 0; 
 }
- 
-body {
-  overflow: hidden;
-  width: 100%;
-  height: 100%;
-  padding: 0;
-  margin: 0;
-  font-family: 'Montserrat', sans-serif;
+
+.cb-slideshow li {
+	
+	list-style: none;
+	
 }
-/* Navigation */
-.navigation {
-  position: absolute;
-  width: 100%;
-  height: 100px;
-  padding: 0 100px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  z-index: 1;
+.cb-slideshow li span { 
+ width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    color: transparent;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: none;
+    opacity: 0;
+    z-index: 0;
+	-webkit-backface-visibility: hidden;
+    -webkit-animation: imageAnimation 24s linear infinite 0s;
+
+    
 }
- 
-.navigation-left {
-  margin-left: -33px;
+.cb-slideshow li div #life{
+	
+	margin-bottom: 200px;
 }
- 
-.navigation-left a {
-  text-decoration: none;
-  text-transform: uppercase;
-  color: #333745;
-  font-size: 12px;
-  font-weight: bold;
-  width: 107px;
-  height: 30px;
-  border: 2px solid transparent;
-  border-radius: 15px;
-  display: inline-block;
-  text-align: center;
-  line-height: 25px;
-  transition: all .2s;
+
+.cb-slideshow li div { 
+    z-index: 1000;
+    position: absolute;
+    bottom: 50px;
+    left: 0px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+    opacity: 0;
+    color: black;
+    -webkit-animation: titleAnimation 24s linear infinite 0s;
 }
- 
-.navigation-left a:hover,
-.navigation-left a:focus {
-  border-color: rgb(234, 46, 73);
-  background-color: rgba(44, 45, 47, 0);
+
+
+.cb-slideshow li:nth-child(1) span { 
+    background-image: url(../images/shop.jpg) 
 }
- 
-.navigation-center {
-  margin-right: 85px;
+.cb-slideshow li:nth-child(2) span { 
+    background-image: url(../images/stay.jpg);
+    -webkit-animation-delay: 6s;
+
 }
- 
-.navigation-right {
-  display: flex;
-  align-items: center;
+.cb-slideshow li:nth-child(3) span { 
+    background-image: url(../images/care.jpg);
+    -webkit-animation-delay: 12s;
+
 }
+<<<<<<< HEAD
  
 .login-btn {
     background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%), radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
@@ -315,50 +324,53 @@ body {
   -webkit-transform: translateX(0);
   transform: translateX(0);
   opacity: 1
+=======
+.cb-slideshow li:nth-child(4) span { 
+    background-color:black;
+    -webkit-animation-delay: 18s;
+>>>>>>> branch 'master' of https://github.com/bios7713/MVCmybatis.git
   
-/* Responsive */
-@media only screen and (max-width: 768px) {
-  .slider h2 {
-    font-size: 20px;
-  }
-  .slider h4 {
-    font-size: 16px;
-  }
+}
+
+.cb-slideshow li:nth-child(2) div { 
+    -webkit-animation-delay: 6s;
+
+}
+.cb-slideshow li:nth-child(3) div { 
+    -webkit-animation-delay: 12s;
+
+}
+.cb-slideshow li:nth-child(4) div { 
+    -webkit-animation-delay: 18s;
  
-  .slider-content {
-    padding: 0 2%
-  }
+}
+
+
+/* Animation for the slideshow images */
+@-webkit-keyframes imageAnimation { 
+    0% { opacity: 0;
+    -webkit-animation-timing-function: ease-in; }
+    8% { opacity: 1;
+         -webkit-animation-timing-function: ease-out; }
+    17% { opacity: 1 }
+    25% { opacity: 0 }
+
+}
+
+/* Animation for the title */
+@-webkit-keyframes titleAnimation { 
+    0% { opacity: 0 }
+    8% { opacity: 1 }
+    17% { opacity: 1 }
+    19% { opacity: 0 }
  
-  .navigation {
-    padding: 0 2%;
-  }
- 
-  .navigation-left {
-    display: none;
-  }
- 
-  .number-pagination {
-    right: 2%;
-  }
-  .slider-pagination {
-    left: 2%;
-  }
- 
-  .slider .buy-now-btn {
-    padding: 0 15px;
-    width: 175px;
-    height: 42px;
-  }
- 
-  .slider .buy-now-btn:after {
-    top: 15px;
-  }
- 
-  .slider > img {
-    right: 2%;
-  }
- 
-  .slide-1 > img {
-    right: -110px;
-  }
+}
+
+
+
+@media screen and (max-width: 1140px) { 
+    .cb-slideshow li div h3 { font-size: 140px }
+}
+@media screen and (max-width: 600px) { 
+    .cb-slideshow li div h3 { font-size: 80px }
 }

@@ -25,6 +25,8 @@
   				classpath:comment-controller.xml
   				classpath:goods-controller.xml
   				classpath:goods-beans.xml
+  				classpath:servey-beans.xml
+  				classpath:servey-controller.xml
   			</param-value>
   		</init-param>
   		<load-on-startup>1</load-on-startup>

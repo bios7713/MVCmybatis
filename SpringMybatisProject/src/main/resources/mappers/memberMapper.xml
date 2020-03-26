@@ -57,6 +57,14 @@
 	
 	</update>
 
+
+
+<update id="joinUp" parameterType="mDto">
+		update member 
+		set join_ok = #{joinOK}
+		where user_id= #{userId} and user_email = #{userEmail}
+		and join_ok is null
+</update>
 	</mapper>
 	
 	

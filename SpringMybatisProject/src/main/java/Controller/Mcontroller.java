@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class Mcontroller {
 	@RequestMapping("/finalMain")
 	public String M() {
-		return "/main/projectMain";
+		return "/main/newMain";
 	}
 }

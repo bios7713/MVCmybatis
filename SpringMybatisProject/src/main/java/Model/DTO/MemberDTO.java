@@ -6,6 +6,8 @@ import java.sql.Timestamp;
 public class MemberDTO  implements Serializable {
 
 	
+	
+
 	String userId;
 	String userPw;
 	String userName;
@@ -16,9 +18,17 @@ public class MemberDTO  implements Serializable {
 	String userPh1;
 	String userPh2;
 	Timestamp userRegist;
-	
+	String joinOK;
 	CommentDTO commentDTO;
 	
+	
+	public String getJoinOK() {
+		return joinOK;
+	}
+
+	public void setJoinOK(String joinOK) {
+		this.joinOK = joinOK;
+	}
 	public CommentDTO getCommentDTO() {
 		return commentDTO;
 	}

@@ -81,7 +81,7 @@ function handleNext() {
  
   <!-- Slider #1 -->
   <div class="slider slide-1">
-    <img src="main/images/life.jpg" alt="" style="width: 100%; height: 100%;">
+    <img src="main/images/asd.png" alt="" style="width: 100%; height: 100%;">
     <div class="slider-content">
       <h4>New Product</h4>
       <h2>Denim Longline T-Shirt Dress With Split</h2>
@@ -107,7 +107,7 @@ function handleNext() {
  
   <!-- Slider #3 -->
   <div class="slider slide-3">
-    <img src="main/images/home.jpg" alt=""  style="width: 100%; height: 100%;">
+    <img src="main/images/bbb.png" alt=""  style="width: 100%; height: 100%;">
     <div class="slider-content">
       <h4>New Product</h4>
       <h2>Denim Longline T-Shirt Dress With Split</h2>

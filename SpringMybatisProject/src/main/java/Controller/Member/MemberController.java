@@ -54,5 +54,20 @@ public class MemberController {
 		return "redirect:agree";
 	}
 	
+	
+	@ RequestMapping("/memberMail")
+	public String memberMail(@RequestParam(value="num") String num , 
+										@RequestParam(value="reciver") String reciver,
+										@RequestParam(value="userId") String userId) {
+		
+		Integer i = memberJoinService.numUpdate(num,reciver,userId);
+		if(i>0) {
+			
+			return "member/success";
+		}else {
+			
+			return " member/fail";
+		}
+	}
 
 }
